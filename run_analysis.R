@@ -37,5 +37,5 @@ dataset3<-merge(labels, dataset2)
 dataset4<-group_by(dataset3, ActivityName, Subject)
 tidydataset<-aggregate(dataset4[,4:89], list(Subject=dataset4$Subject, ActivityName=dataset4$ActivityName), mean)
 tidydataset<-tidydataset[,c(2,1,3:88)]
-write.table(tidydataset, "Tidy Data Set.txt")
+write.table(tidydataset, "Tidy Data Set.txt", row.name=FALSE)
 
